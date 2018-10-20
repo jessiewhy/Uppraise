@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Balloons YAY ME</title>
+        <title>Balloons</title>
 
 
 
@@ -15,16 +15,22 @@
         <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
     </head>
     <body>
-        <p> HI. </p>
-
-
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Item</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
             </div>
-            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+            <div>
+                <!--//print the result:-->
+                <h5>Result: </h5>
+            </div>
         </div>
-
+        <div class="col-md-2"></div>
+    </div>
 
         <div class="balloons"></div>
     </body>
