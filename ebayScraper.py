@@ -13,8 +13,8 @@ def getListings(product):
 
 	listings = soup.findAll("div", {"class": "s-item__info clearfix"})
 	for listing in listings:
-		prices.append(filter(lambda x: x.isdigit() or x == ".", str(listing.find("span", {"class": "POSITIVE"}))))
-		condition = listing.find("span", {"class" : "SECONDARY_INFO"})
+		prices.append(int(float(filter(lambda x: x.isdigit() or x == ".", str(listing.find("span", {"class": "POSITIVE"}))))))
+		condition = str(listing.find("span", {"class" : "SECONDARY_INFO"}))
 		if "Pre" in condition:
 			condition = 3
 		elif "New" in condition:
@@ -27,7 +27,7 @@ def getListings(product):
 
 	return (conditions, prices)
 
-print(getListings("calculator watch"))
+
 
 
 
