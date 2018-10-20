@@ -1,22 +1,21 @@
 import pandas as pd
 from ebayScraper import getListings
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.linear_model import LinearRegression 
+from sklearn.datasets import make_regression
+import numpy as np
 
-listingsData = getListings("calculator watch")
+data = getListings("iphone X")
 
-#prediction target: price
-y= listingsData[1]
-print(y) 
 
-#features
-
-X= listingsData[0]
-
-#check
-X.describe()
-
+X, y = np.array(data[0]).reshape((-1,1)), data[1]
 #define model
-ebay_model=DecisionTreeRegressor(random_state=1)
+ebay_model= LinearRegression()
+
+
 
 #fit model
 ebay_model.fit(X,y)
+
+pred = [[2]]
+#pred.reshape(1, -1)
+print(ebay_model.predict(pred))
