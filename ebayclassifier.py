@@ -6,8 +6,8 @@ import numpy as np
 from flask import Flask 
 app=Flask(__name__)
 
-def getResults(query):
-    data = getListings(query)
+def getResults(item):
+    data = getListings(item)
     
     X, y = np.array(data[0]).reshape((-1,1)), data[1]
     #define model
