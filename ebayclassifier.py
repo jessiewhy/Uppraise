@@ -9,29 +9,25 @@ app=Flask(__name__)
 @app.route('/py', methods = ['POST', 'GET'])
 def getResults():
     if request.method == 'POST':
-        #item = str(request.form['item'])
-        test = ""
-        for key in request.form:
-            test=test+", "+key + "= " + request.form[key]
-        return "Item: \n" + test
-        #data = getListings(item)
+        item = str(request.form['item'])
+        condition = int(request.form['condition'])
+        
+        data = getListings(item)
        
-        """
+        
         X, y = np.array(data[0]).reshape((-1,1)), data[1]
-        #define model
+        #define models
         ebay_model= LinearRegression()
 
         #fit model
         ebay_model.fit(X,y)
         
-        pred = [[2]]
-        #pred.reshape(1, -1)
+        pred = [[condition]]
+
         result = str(ebay_model.predict(pred))
 
-        return render_template("balloons.html", result = result)
-        """
-    else:
-        return "else"
+        return render_template("balloons.html", result = str(result))
+        
 
 @app.route('/', methods = ['GET', 'POST'])
 def result():
