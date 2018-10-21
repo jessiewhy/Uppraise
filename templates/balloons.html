@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Balloons</title>
-
+        <title>U-PPRAISE</title>
 
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -14,28 +13,31 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
     </head>
+
     <body>
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
+            <div class="logo">
+                <img src="static/logo.jpg" alt="U-ppraisal logo">
+            </div>
+       <script src = "script.js"></script>
             <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-lg">Item</span>
                 </div>
-                <form action = "http://localhost:5000/py" method = "POST">
+                <form action = "/py" method = "POST">
                     <input name="item" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                     <input name="condition" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                     <input type="submit" value = "search"/>
                 </form>
             </div>
+
             <div>
-                <!--//print the result:-->
                 <h5>Result: {{result}}</h5>
             </div>
         </div>
         <div class="col-md-2"></div>
     </div>
-
-        <div class="balloons"></div>
     </body>
 </html>

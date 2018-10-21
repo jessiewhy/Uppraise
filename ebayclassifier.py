@@ -33,5 +33,5 @@ def getResults():
 def result():
         return render_template("balloons.html")
     
-if __name__ == "__ebayclassifier__":
+if __name__ == "__main__":
     app.run(debug=True)
