@@ -1,0 +1,13 @@
+.loader {
+    border: 16px solid #B57300; /* Gold */
+    border-top: 16px solid #000000; /* Black */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
