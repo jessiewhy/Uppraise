@@ -1,4 +1,4 @@
-import urllib2
+import urllib3
 from bs4 import BeautifulSoup
 
 def getListings(product):
@@ -8,7 +8,7 @@ def getListings(product):
 	prices = []
 	conditions = []
 	url = "https://www.ebay.com/sch/?_nkw=%22{}%22&LH_Sold=1&_ipg=200".format(product.replace(" ", "%20"))
-	page = urllib2.urlopen(url)
+	page = urllib3.urlopen(url)
 	soup = BeautifulSoup(page,'html.parser')
 
 	listings = soup.findAll("div", {"class": "s-item__info clearfix"})
