@@ -26,12 +26,12 @@ def getResults():
 
         result = str(ebay_model.predict(pred))
 
-        return render_template("balloons.html", result = str(result))
+        return render_template("index.html", result = str(result))
         
 
 @app.route('/', methods = ['GET', 'POST'])
 def result():
-        return render_template("balloons.html")
+        return render_template("index.html")
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
